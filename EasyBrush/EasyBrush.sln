@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyBrush", "EasyBrush\EasyBrush.csproj", "{63AAB067-0C20-4962-9C21-9CA041A066ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{4942F7AD-57B2-4DB5-AD40-2B53F155E7D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63AAB067-0C20-4962-9C21-9CA041A066ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63AAB067-0C20-4962-9C21-9CA041A066ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63AAB067-0C20-4962-9C21-9CA041A066ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63AAB067-0C20-4962-9C21-9CA041A066ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4942F7AD-57B2-4DB5-AD40-2B53F155E7D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4942F7AD-57B2-4DB5-AD40-2B53F155E7D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4942F7AD-57B2-4DB5-AD40-2B53F155E7D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4942F7AD-57B2-4DB5-AD40-2B53F155E7D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
