@@ -36,8 +36,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Name = "DrawForm";
-            this.Text = "DrawForm";
+            this.Text = "画图";
             this.Load += new System.EventHandler(this.DrawForm_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DrawForm_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DrawForm_KeyPress);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DrawForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DrawForm_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.DrawForm_MouseUp);
             this.ResumeLayout(false);
 
         }

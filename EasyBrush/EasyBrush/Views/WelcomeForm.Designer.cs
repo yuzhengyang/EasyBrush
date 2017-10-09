@@ -30,11 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             this.TMAnimShowAndHide = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TMAnimShowAndHide
             // 
             this.TMAnimShowAndHide.Tick += new System.EventHandler(this.TMAnimShowAndHide_Tick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(732, 424);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "欢迎使用";
             // 
             // WelcomeForm
             // 
@@ -43,15 +56,18 @@
             this.BackgroundImage = global::EasyBrush.Properties.Resources.welcome_back_01;
             this.Border = 0;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Name = "WelcomeForm";
             this.Text = "WelcomeForm";
             this.Load += new System.EventHandler(this.WelcomeForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Timer TMAnimShowAndHide;
+        private System.Windows.Forms.Label label1;
     }
 }

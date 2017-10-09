@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commons\R.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\CanvasForm.cs">
@@ -113,6 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\welcome_back_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Partials\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
