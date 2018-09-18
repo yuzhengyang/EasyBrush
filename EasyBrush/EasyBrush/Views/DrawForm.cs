@@ -47,6 +47,7 @@ namespace EasyBrush.Views
                 R.Forms.Draw.TopMost = true;
                 R.Forms.Draw.Show();
                 R.Forms.Main.WindowState = FormWindowState.Minimized;
+                Activate();
             }
             else
             {
