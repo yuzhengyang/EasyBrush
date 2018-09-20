@@ -1,9 +1,8 @@
 ﻿using EasyBrush.Commons;
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-using static Y.Utils.WindowsUtils.APIUtils.WindowsHotKeyAPI;
+using static Azylee.Core.WindowsUtils.APIUtils.WindowsHotKeyAPI;
 
 namespace EasyBrush.Views
 {
@@ -21,11 +20,6 @@ namespace EasyBrush.Views
         private void MainForm_Load(object sender, EventArgs e)
         {
             TopMost = true;
-        }
-
-        private void BTDraw_Click(object sender, EventArgs e)
-        {
-            R.Forms.Draw.Drawing(true);
         }
 
         /// <summary>
@@ -64,14 +58,23 @@ namespace EasyBrush.Views
             R.Forms.Draw.Clear();
         }
 
-        private void PBColorBox_Click(object sender, EventArgs e)
+        //private void PBColorBox_Click(object sender, EventArgs e)
+        //{
+        //    if (colorDialog1.ShowDialog() == DialogResult.OK)
+        //    {
+        //        R.Color = colorDialog1.Color;
+        //        R.Pen = new Pen(Color.FromArgb(255, R.Color), 3f);
+        //        PBColorBox.BackColor = R.Color;
+        //    }
+        //}
+
+        private void MainForm_MouseClick(object sender, MouseEventArgs e)
         {
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
-            {
-                R.Color = colorDialog1.Color;
-                R.Pen = new Pen(Color.FromArgb(255, R.Color), 3f);
-                PBColorBox.BackColor = R.Color;
-            }
+            Bitmap bitmap = new Bitmap(BackgroundImage);
+            R.Color = bitmap.GetPixel(e.X, e.Y);
+            R.Pen = new Pen(Color.FromArgb(255, R.Color), 3f);
+
+            R.Forms.Draw.Drawing(true);
         }
     }
 }

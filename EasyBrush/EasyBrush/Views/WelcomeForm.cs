@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using Azylee.WinformSkin.FormUI.NoTitle;
+using System;
 using System.Windows.Forms;
-using Y.Skin.YoForm.NoTitle;
 
 namespace EasyBrush.Views
 {

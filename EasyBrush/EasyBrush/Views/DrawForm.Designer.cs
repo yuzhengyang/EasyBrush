@@ -35,8 +35,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DrawForm";
-            this.Text = "画图";
+            this.Text = "绘图中......";
             this.Load += new System.EventHandler(this.DrawForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DrawForm_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DrawForm_KeyPress);

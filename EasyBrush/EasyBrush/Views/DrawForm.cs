@@ -1,14 +1,8 @@
 ﻿using EasyBrush.Commons;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Y.Utils.DataUtils.Collections;
 
 namespace EasyBrush.Views
 {
@@ -64,6 +58,11 @@ namespace EasyBrush.Views
                 IsPenDown = true;
                 StartPoint = e.Location;
                 R.Forms.Canvas.SetImage(R.Canvas);
+                R.Forms.Draw.Drawing(true);
+            }
+            else if (e.Button == MouseButtons.Right)
+            {
+                R.Forms.Draw.Drawing(false);
             }
         }
 
