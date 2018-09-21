@@ -1,4 +1,5 @@
-﻿using EasyBrush.Views;
+﻿using Azylee.Core.FormUtils;
+using EasyBrush.Views;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -12,6 +13,8 @@ namespace EasyBrush.Commons
         public static Pen Pen = null;
         public static Bitmap Canvas = null;
         public static Color Color = Color.Red;
+
+        public static FormManTool FormMan = new FormManTool();
         public class Forms
         {
             public static MainForm Main = null;

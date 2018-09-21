@@ -60,6 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commons\R.cs" />
+    <Compile Include="Partials\ColorPartial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Partials\ColorPartial.Designer.cs">
+      <DependentUpon>ColorPartial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\CanvasForm.cs">
@@ -92,6 +98,9 @@
     <Compile Include="Views\WelcomeForm.Designer.cs">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Partials\ColorPartial.resx">
+      <DependentUpon>ColorPartial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -128,9 +137,7 @@
   <ItemGroup>
     <None Include="Resources\welcome_back_01.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Partials\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="FodyWeavers.xml" />
   </ItemGroup>

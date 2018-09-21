@@ -1,4 +1,5 @@
-﻿using EasyBrush.Commons;
+﻿using Azylee.WinformSkin.FormUI.NoTitle;
+using EasyBrush.Commons;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -6,7 +7,7 @@ using static Azylee.Core.WindowsUtils.APIUtils.WindowsHotKeyAPI;
 
 namespace EasyBrush.Views
 {
-    public partial class MainForm : Form
+    public partial class MainForm : NoTitleForm
     {
         public MainForm()
         {
@@ -70,10 +71,15 @@ namespace EasyBrush.Views
 
         private void MainForm_MouseClick(object sender, MouseEventArgs e)
         {
-            Bitmap bitmap = new Bitmap(BackgroundImage);
-            R.Color = bitmap.GetPixel(e.X, e.Y);
-            R.Pen = new Pen(Color.FromArgb(255, R.Color), 3f);
+            //Bitmap bitmap = new Bitmap(BackgroundImage);
+            //R.Color = bitmap.GetPixel(e.X, e.Y);
+            //R.Pen = new Pen(Color.FromArgb(255, R.Color), 3f);
 
+            R.Forms.Draw.Drawing(true);
+        }
+
+        private void BTDraw_Click(object sender, EventArgs e)
+        {
             R.Forms.Draw.Drawing(true);
         }
     }
