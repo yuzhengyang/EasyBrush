@@ -30,7 +30,7 @@ namespace EasyBrush.Views
             R.Canvas = new Bitmap(Width, Height);
             Gra = Graphics.FromImage(R.Canvas);
             Gra.SmoothingMode = SmoothingMode.AntiAlias;
-            R.Pen = new Pen(Color.FromArgb(255, R.Color), 3f);
+            R.MyPen.Set();
         }
         public void Drawing(bool isDraw)
         {
@@ -48,6 +48,7 @@ namespace EasyBrush.Views
                 R.Forms.Draw.TopMost = false;
                 R.Forms.Draw.Hide();
                 R.Forms.Main.WindowState = FormWindowState.Normal;
+                R.Forms.Main.Activate();
             }
         }
 
@@ -70,7 +71,7 @@ namespace EasyBrush.Views
         {
             if (IsPenDown)
             {
-                Gra.DrawLine(R.Pen, StartPoint, e.Location);
+                Gra.DrawLine(R.MyPen.Pen, StartPoint, e.Location);
                 StartPoint = e.Location;
                 R.Forms.Canvas.SetImage(R.Canvas);
             }
@@ -82,7 +83,7 @@ namespace EasyBrush.Views
         }
         public void Clear()
         {
-            Gra.Clear(Color.FromArgb(0, Color.White));
+            Gra?.Clear(Color.FromArgb(0, Color.White));
             R.Forms.Canvas.SetImage(R.Canvas);
         }
 

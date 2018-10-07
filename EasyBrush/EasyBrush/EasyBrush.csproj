@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\Icon\Icon_1.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Azylee.Core, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Azylee.Core.1.0.0.4\lib\Azylee.Core.dll</HintPath>
@@ -123,6 +126,7 @@
     <EmbeddedResource Include="Views\WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Images\Icon\Icon_1.psd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -142,6 +146,8 @@
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\Icon\Icon_1.ico" />
+    <Content Include="Images\Icon\Icon_1.png" />
     <Content Include="Images\Swatches\color_base.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

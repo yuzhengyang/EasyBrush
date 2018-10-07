@@ -7,8 +7,9 @@ using static Azylee.Core.WindowsUtils.APIUtils.WindowsHotKeyAPI;
 
 namespace EasyBrush.Views
 {
-    public partial class MainForm : NoTitleForm
+    public partial class MainForm : Form
     {
+        #region 窗体事件
         public MainForm()
         {
             InitializeComponent();
@@ -20,13 +21,57 @@ namespace EasyBrush.Views
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            Text = $"{Text}  [{Application.ProductVersion}]";
             TopMost = true;
+
+            R.MyPen.Set();
+        }
+        #endregion
+
+        #region 按钮事件
+        private void BTClear_Click(object sender, EventArgs e)
+        {
+            R.Forms.Draw.Clear();
         }
 
-        /// <summary>
-        /// 支持快捷键
-        /// </summary>
-        /// <param name="m"></param>
+        private void BTDraw_Click(object sender, EventArgs e)
+        {
+            R.Forms.Draw.Drawing(true);
+        }
+        #endregion
+        #region 菜单功能
+        private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NIMain.Visible = false;
+            Close();
+        }
+
+        private void 绘画ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            R.Forms.Draw.Drawing(true);
+        }
+
+        private void 清屏ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            R.Forms.Draw.Clear();
+        }
+        #endregion
+
+        #region 色板选色
+        private void PNColor_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Bitmap bitmap = new Bitmap(PNColor.BackgroundImage);
+                R.MyPen.Color = bitmap.GetPixel(e.X, e.Y);
+                R.MyPen.Set();
+
+                R.Forms.Draw.Drawing(true);
+            }
+        }
+        #endregion
+
+        #region 支持快捷键
         protected override void WndProc(ref Message m)
         {
             const int WM_HOTKEY = 0x0312;
@@ -54,33 +99,80 @@ namespace EasyBrush.Views
             base.WndProc(ref m);
         }
 
-        private void BTClear_Click(object sender, EventArgs e)
+        #endregion
+
+        #region 右下角图标事件
+        private void NIMain_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            R.Forms.Draw.Clear();
+            Show();
+            Activate();
+        } 
+        #endregion
+
+        #region 画笔粗细、透明度设置
+        private void RBPenWidthThin_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RBPenWidthThin.Checked)
+            {
+                R.MyPen.Width = 5f;
+                R.MyPen.Set();
+            }
         }
 
-        //private void PBColorBox_Click(object sender, EventArgs e)
-        //{
-        //    if (colorDialog1.ShowDialog() == DialogResult.OK)
-        //    {
-        //        R.Color = colorDialog1.Color;
-        //        R.Pen = new Pen(Color.FromArgb(255, R.Color), 3f);
-        //        PBColorBox.BackColor = R.Color;
-        //    }
-        //}
-
-        private void MainForm_MouseClick(object sender, MouseEventArgs e)
+        private void RBPenWidthMiddle_CheckedChanged(object sender, EventArgs e)
         {
-            //Bitmap bitmap = new Bitmap(BackgroundImage);
-            //R.Color = bitmap.GetPixel(e.X, e.Y);
-            //R.Pen = new Pen(Color.FromArgb(255, R.Color), 3f);
-
-            R.Forms.Draw.Drawing(true);
+            if (RBPenWidthMiddle.Checked)
+            {
+                R.MyPen.Width = 10f;
+                R.MyPen.Set();
+            }
         }
 
-        private void BTDraw_Click(object sender, EventArgs e)
+        private void RBPenWidthLarge_CheckedChanged(object sender, EventArgs e)
         {
-            R.Forms.Draw.Drawing(true);
+            if (RBPenWidthLarge.Checked)
+            {
+                R.MyPen.Width = 15f;
+                R.MyPen.Set();
+            }
         }
+
+        private void RBPenAlphaNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RBPenAlphaNo.Checked)
+            {
+                R.MyPen.Alpha = 255;
+                R.MyPen.Set();
+            }
+        }
+
+        private void RBPenAlphaLow_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RBPenAlphaLow.Checked)
+            {
+                R.MyPen.Alpha = (int)(255 - (255 * 0.2));
+                R.MyPen.Set();
+            }
+        }
+
+        private void RBPenAlphaMiddle_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RBPenAlphaMiddle.Checked)
+            {
+                R.MyPen.Alpha = (int)(255 - (255 * 0.4));
+                R.MyPen.Set();
+            }
+        }
+
+        private void RBPenAlphaHigh_CheckedChanged(object sender, EventArgs e)
+        {
+            if (RBPenAlphaHigh.Checked)
+            {
+                R.MyPen.Alpha = (int)(255 - (255 * 0.6));
+                R.MyPen.Set();
+            }
+        }
+        #endregion
+
     }
 }
