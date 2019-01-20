@@ -102,11 +102,23 @@ namespace EasyBrush.Views
         #endregion
 
         #region 右下角图标事件
+        private void 主界面ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowForm();
+        }
+
+        private void 退出ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            NIMain.Visible = false;
+            FormClosing -= MainForm_FormClosing;
+
+            try { Application.Exit(); } catch { }
+            try { Environment.Exit(Environment.ExitCode); } catch { }
+        }
         private void NIMain_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            Show();
-            Activate();
-        } 
+            ShowForm();
+        }
         #endregion
 
         #region 画笔粗细、透明度设置
@@ -174,5 +186,53 @@ namespace EasyBrush.Views
         }
         #endregion
 
+        #region MyRegion
+        /// <summary>
+        /// 隐藏窗口
+        /// </summary>
+        private void HideForm()
+        {
+            Opacity = 0;
+            ShowInTaskbar = false;
+            Hide();
+        }
+        /// <summary>
+        /// 显示窗口
+        /// </summary>
+        private void ShowForm()
+        {
+            Opacity = 100;
+            ShowInTaskbar = true;
+            if (WindowState == FormWindowState.Minimized) WindowState = FormWindowState.Normal;
+            Show();
+            Activate();
+        }
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            HideForm();
+            switch (e.CloseReason)
+            {
+                case CloseReason.None:
+                    e.Cancel = true;
+                    break;
+                case CloseReason.WindowsShutDown:
+                    break;
+                case CloseReason.MdiFormClosing:
+                    e.Cancel = true;
+                    break;
+                case CloseReason.UserClosing:
+                    e.Cancel = true;
+                    break;
+                case CloseReason.TaskManagerClosing:
+                    e.Cancel = true;
+                    break;
+                case CloseReason.FormOwnerClosing:
+                    e.Cancel = true;
+                    break;
+                case CloseReason.ApplicationExitCall:
+                    break;
+            }
+        }
+        #endregion 
     }
 }

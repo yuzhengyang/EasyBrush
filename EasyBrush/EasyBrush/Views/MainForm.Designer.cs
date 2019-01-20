@@ -54,18 +54,22 @@
             this.检查更新ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.RBPenWidthThin = new System.Windows.Forms.RadioButton();
-            this.RBPenWidthMiddle = new System.Windows.Forms.RadioButton();
-            this.RBPenWidthLarge = new System.Windows.Forms.RadioButton();
-            this.RBPenAlphaMiddle = new System.Windows.Forms.RadioButton();
-            this.RBPenAlphaLow = new System.Windows.Forms.RadioButton();
-            this.RBPenAlphaNo = new System.Windows.Forms.RadioButton();
             this.RBPenAlphaHigh = new System.Windows.Forms.RadioButton();
+            this.RBPenAlphaMiddle = new System.Windows.Forms.RadioButton();
+            this.RBPenAlphaNo = new System.Windows.Forms.RadioButton();
+            this.RBPenAlphaLow = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.RBPenWidthLarge = new System.Windows.Forms.RadioButton();
+            this.RBPenWidthMiddle = new System.Windows.Forms.RadioButton();
+            this.RBPenWidthThin = new System.Windows.Forms.RadioButton();
+            this.CmsMain = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.主界面ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.退出ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.MSMain.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.CmsMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -127,6 +131,7 @@
             // 
             // NIMain
             // 
+            this.NIMain.ContextMenuStrip = this.CmsMain;
             this.NIMain.Icon = ((System.Drawing.Icon)(resources.GetObject("NIMain.Icon")));
             this.NIMain.Text = "屏幕画板";
             this.NIMain.Visible = true;
@@ -176,7 +181,7 @@
             // 退出ToolStripMenuItem
             // 
             this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.退出ToolStripMenuItem.Text = "退出";
             this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
             // 
@@ -189,17 +194,17 @@
             this.编辑ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.编辑ToolStripMenuItem.Text = "编辑";
             // 
-            // 清空ToolStripMenuItem
+            // 绘画ToolStripMenuItem
             // 
-            this.绘画ToolStripMenuItem.Name = "清空ToolStripMenuItem";
-            this.绘画ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.绘画ToolStripMenuItem.Name = "绘画ToolStripMenuItem";
+            this.绘画ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.绘画ToolStripMenuItem.Text = "绘画";
             this.绘画ToolStripMenuItem.Click += new System.EventHandler(this.绘画ToolStripMenuItem_Click);
             // 
             // 清屏ToolStripMenuItem
             // 
             this.清屏ToolStripMenuItem.Name = "清屏ToolStripMenuItem";
-            this.清屏ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.清屏ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.清屏ToolStripMenuItem.Text = "清屏";
             this.清屏ToolStripMenuItem.Click += new System.EventHandler(this.清屏ToolStripMenuItem_Click);
             // 
@@ -217,25 +222,25 @@
             // 查看帮助ToolStripMenuItem
             // 
             this.查看帮助ToolStripMenuItem.Name = "查看帮助ToolStripMenuItem";
-            this.查看帮助ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.查看帮助ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.查看帮助ToolStripMenuItem.Text = "查看帮助";
             // 
             // 发送反馈ToolStripMenuItem
             // 
             this.发送反馈ToolStripMenuItem.Name = "发送反馈ToolStripMenuItem";
-            this.发送反馈ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.发送反馈ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.发送反馈ToolStripMenuItem.Text = "发送反馈";
             // 
             // 技术支持ToolStripMenuItem
             // 
             this.技术支持ToolStripMenuItem.Name = "技术支持ToolStripMenuItem";
-            this.技术支持ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.技术支持ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.技术支持ToolStripMenuItem.Text = "技术支持";
             // 
             // 检查更新ToolStripMenuItem
             // 
             this.检查更新ToolStripMenuItem.Name = "检查更新ToolStripMenuItem";
-            this.检查更新ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.检查更新ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.检查更新ToolStripMenuItem.Text = "检查更新";
             // 
             // panel1
@@ -263,52 +268,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "透明度";
             // 
-            // groupBox2
+            // RBPenAlphaHigh
             // 
-            this.groupBox2.Controls.Add(this.RBPenWidthLarge);
-            this.groupBox2.Controls.Add(this.RBPenWidthMiddle);
-            this.groupBox2.Controls.Add(this.RBPenWidthThin);
-            this.groupBox2.Location = new System.Drawing.Point(425, 66);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(158, 87);
-            this.groupBox2.TabIndex = 14;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "笔尖";
-            // 
-            // RBPenWidthThin
-            // 
-            this.RBPenWidthThin.AutoSize = true;
-            this.RBPenWidthThin.Checked = true;
-            this.RBPenWidthThin.Location = new System.Drawing.Point(17, 20);
-            this.RBPenWidthThin.Name = "RBPenWidthThin";
-            this.RBPenWidthThin.Size = new System.Drawing.Size(77, 16);
-            this.RBPenWidthThin.TabIndex = 0;
-            this.RBPenWidthThin.TabStop = true;
-            this.RBPenWidthThin.Text = "细（5px）";
-            this.RBPenWidthThin.UseVisualStyleBackColor = true;
-            this.RBPenWidthThin.CheckedChanged += new System.EventHandler(this.RBPenWidthThin_CheckedChanged);
-            // 
-            // RBPenWidthMiddle
-            // 
-            this.RBPenWidthMiddle.AutoSize = true;
-            this.RBPenWidthMiddle.Location = new System.Drawing.Point(17, 42);
-            this.RBPenWidthMiddle.Name = "RBPenWidthMiddle";
-            this.RBPenWidthMiddle.Size = new System.Drawing.Size(83, 16);
-            this.RBPenWidthMiddle.TabIndex = 1;
-            this.RBPenWidthMiddle.Text = "中（10px）";
-            this.RBPenWidthMiddle.UseVisualStyleBackColor = true;
-            this.RBPenWidthMiddle.CheckedChanged += new System.EventHandler(this.RBPenWidthMiddle_CheckedChanged);
-            // 
-            // RBPenWidthLarge
-            // 
-            this.RBPenWidthLarge.AutoSize = true;
-            this.RBPenWidthLarge.Location = new System.Drawing.Point(17, 64);
-            this.RBPenWidthLarge.Name = "RBPenWidthLarge";
-            this.RBPenWidthLarge.Size = new System.Drawing.Size(83, 16);
-            this.RBPenWidthLarge.TabIndex = 2;
-            this.RBPenWidthLarge.Text = "粗（15px）";
-            this.RBPenWidthLarge.UseVisualStyleBackColor = true;
-            this.RBPenWidthLarge.CheckedChanged += new System.EventHandler(this.RBPenWidthLarge_CheckedChanged);
+            this.RBPenAlphaHigh.AutoSize = true;
+            this.RBPenAlphaHigh.Location = new System.Drawing.Point(17, 86);
+            this.RBPenAlphaHigh.Name = "RBPenAlphaHigh";
+            this.RBPenAlphaHigh.Size = new System.Drawing.Size(77, 16);
+            this.RBPenAlphaHigh.TabIndex = 6;
+            this.RBPenAlphaHigh.Text = "高（60%）";
+            this.RBPenAlphaHigh.UseVisualStyleBackColor = true;
+            this.RBPenAlphaHigh.CheckedChanged += new System.EventHandler(this.RBPenAlphaHigh_CheckedChanged);
             // 
             // RBPenAlphaMiddle
             // 
@@ -320,17 +289,6 @@
             this.RBPenAlphaMiddle.Text = "中（40%）";
             this.RBPenAlphaMiddle.UseVisualStyleBackColor = true;
             this.RBPenAlphaMiddle.CheckedChanged += new System.EventHandler(this.RBPenAlphaMiddle_CheckedChanged);
-            // 
-            // RBPenAlphaLow
-            // 
-            this.RBPenAlphaLow.AutoSize = true;
-            this.RBPenAlphaLow.Location = new System.Drawing.Point(17, 42);
-            this.RBPenAlphaLow.Name = "RBPenAlphaLow";
-            this.RBPenAlphaLow.Size = new System.Drawing.Size(77, 16);
-            this.RBPenAlphaLow.TabIndex = 4;
-            this.RBPenAlphaLow.Text = "轻（20%）";
-            this.RBPenAlphaLow.UseVisualStyleBackColor = true;
-            this.RBPenAlphaLow.CheckedChanged += new System.EventHandler(this.RBPenAlphaLow_CheckedChanged);
             // 
             // RBPenAlphaNo
             // 
@@ -345,16 +303,85 @@
             this.RBPenAlphaNo.UseVisualStyleBackColor = true;
             this.RBPenAlphaNo.CheckedChanged += new System.EventHandler(this.RBPenAlphaNo_CheckedChanged);
             // 
-            // RBPenAlphaHigh
+            // RBPenAlphaLow
             // 
-            this.RBPenAlphaHigh.AutoSize = true;
-            this.RBPenAlphaHigh.Location = new System.Drawing.Point(17, 86);
-            this.RBPenAlphaHigh.Name = "RBPenAlphaHigh";
-            this.RBPenAlphaHigh.Size = new System.Drawing.Size(77, 16);
-            this.RBPenAlphaHigh.TabIndex = 6;
-            this.RBPenAlphaHigh.Text = "高（60%）";
-            this.RBPenAlphaHigh.UseVisualStyleBackColor = true;
-            this.RBPenAlphaHigh.CheckedChanged += new System.EventHandler(this.RBPenAlphaHigh_CheckedChanged);
+            this.RBPenAlphaLow.AutoSize = true;
+            this.RBPenAlphaLow.Location = new System.Drawing.Point(17, 42);
+            this.RBPenAlphaLow.Name = "RBPenAlphaLow";
+            this.RBPenAlphaLow.Size = new System.Drawing.Size(77, 16);
+            this.RBPenAlphaLow.TabIndex = 4;
+            this.RBPenAlphaLow.Text = "轻（20%）";
+            this.RBPenAlphaLow.UseVisualStyleBackColor = true;
+            this.RBPenAlphaLow.CheckedChanged += new System.EventHandler(this.RBPenAlphaLow_CheckedChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.RBPenWidthLarge);
+            this.groupBox2.Controls.Add(this.RBPenWidthMiddle);
+            this.groupBox2.Controls.Add(this.RBPenWidthThin);
+            this.groupBox2.Location = new System.Drawing.Point(425, 66);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(158, 87);
+            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "笔尖";
+            // 
+            // RBPenWidthLarge
+            // 
+            this.RBPenWidthLarge.AutoSize = true;
+            this.RBPenWidthLarge.Location = new System.Drawing.Point(17, 64);
+            this.RBPenWidthLarge.Name = "RBPenWidthLarge";
+            this.RBPenWidthLarge.Size = new System.Drawing.Size(83, 16);
+            this.RBPenWidthLarge.TabIndex = 2;
+            this.RBPenWidthLarge.Text = "粗（15px）";
+            this.RBPenWidthLarge.UseVisualStyleBackColor = true;
+            this.RBPenWidthLarge.CheckedChanged += new System.EventHandler(this.RBPenWidthLarge_CheckedChanged);
+            // 
+            // RBPenWidthMiddle
+            // 
+            this.RBPenWidthMiddle.AutoSize = true;
+            this.RBPenWidthMiddle.Location = new System.Drawing.Point(17, 42);
+            this.RBPenWidthMiddle.Name = "RBPenWidthMiddle";
+            this.RBPenWidthMiddle.Size = new System.Drawing.Size(83, 16);
+            this.RBPenWidthMiddle.TabIndex = 1;
+            this.RBPenWidthMiddle.Text = "中（10px）";
+            this.RBPenWidthMiddle.UseVisualStyleBackColor = true;
+            this.RBPenWidthMiddle.CheckedChanged += new System.EventHandler(this.RBPenWidthMiddle_CheckedChanged);
+            // 
+            // RBPenWidthThin
+            // 
+            this.RBPenWidthThin.AutoSize = true;
+            this.RBPenWidthThin.Checked = true;
+            this.RBPenWidthThin.Location = new System.Drawing.Point(17, 20);
+            this.RBPenWidthThin.Name = "RBPenWidthThin";
+            this.RBPenWidthThin.Size = new System.Drawing.Size(77, 16);
+            this.RBPenWidthThin.TabIndex = 0;
+            this.RBPenWidthThin.TabStop = true;
+            this.RBPenWidthThin.Text = "细（5px）";
+            this.RBPenWidthThin.UseVisualStyleBackColor = true;
+            this.RBPenWidthThin.CheckedChanged += new System.EventHandler(this.RBPenWidthThin_CheckedChanged);
+            // 
+            // CmsMain
+            // 
+            this.CmsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.主界面ToolStripMenuItem,
+            this.退出ToolStripMenuItem1});
+            this.CmsMain.Name = "CmsMain";
+            this.CmsMain.Size = new System.Drawing.Size(113, 48);
+            // 
+            // 主界面ToolStripMenuItem
+            // 
+            this.主界面ToolStripMenuItem.Name = "主界面ToolStripMenuItem";
+            this.主界面ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.主界面ToolStripMenuItem.Text = "主界面";
+            this.主界面ToolStripMenuItem.Click += new System.EventHandler(this.主界面ToolStripMenuItem_Click);
+            // 
+            // 退出ToolStripMenuItem1
+            // 
+            this.退出ToolStripMenuItem1.Name = "退出ToolStripMenuItem1";
+            this.退出ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.退出ToolStripMenuItem1.Text = "退出";
+            this.退出ToolStripMenuItem1.Click += new System.EventHandler(this.退出ToolStripMenuItem1_Click);
             // 
             // MainForm
             // 
@@ -378,6 +405,7 @@
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Text = "屏幕画板 - 工具面板";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.MSMain.ResumeLayout(false);
             this.MSMain.PerformLayout();
@@ -387,6 +415,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.CmsMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,5 +454,8 @@
         private System.Windows.Forms.RadioButton RBPenWidthLarge;
         private System.Windows.Forms.RadioButton RBPenWidthMiddle;
         private System.Windows.Forms.RadioButton RBPenWidthThin;
+        private System.Windows.Forms.ContextMenuStrip CmsMain;
+        private System.Windows.Forms.ToolStripMenuItem 主界面ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem1;
     }
 }
