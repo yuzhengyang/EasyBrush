@@ -37,11 +37,15 @@ namespace EasyBrush.Commons
             /// <summary>
             /// 展示界面
             /// </summary>
-            public static CanvasForm Canvas = new CanvasForm();
+            public static CanvasForm Canvas { get { return FormMan.GetUnique<CanvasForm>(); } }
             /// <summary>
             /// 绘图界面
             /// </summary>
-            public static DrawForm Draw = new DrawForm();
+            public static DrawForm Draw { get { return FormMan.GetUnique<DrawForm>(); } }
+        }
+        public class Paths
+        {
+            public static string App = AppDomain.CurrentDomain.BaseDirectory;
         }
     }
 }

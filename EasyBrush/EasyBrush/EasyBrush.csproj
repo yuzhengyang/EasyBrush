@@ -37,12 +37,6 @@
     <ApplicationIcon>icon_3.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Azylee.Core, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Azylee.Core.1.0.0.4\lib\Azylee.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Azylee.WinformSkin">
-      <HintPath>..\Dlls\Azylee.WinformSkin.dll</HintPath>
-    </Reference>
     <Reference Include="Costura, Version=1.6.2.0, Culture=neutral, PublicKeyToken=9919ef960d84173d, processorArchitecture=MSIL">
       <HintPath>..\packages\Costura.Fody.1.6.2\lib\portable-net+sl+win+wpa+wp\Costura.dll</HintPath>
       <Private>False</Private>
@@ -83,11 +77,23 @@
     <Compile Include="Views\DrawForm.Designer.cs">
       <DependentUpon>DrawForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionnaireForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\QuestionnaireForm.Designer.cs">
+      <DependentUpon>QuestionnaireForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SettingsForm.cs">
       <SubType>Form</SubType>
@@ -120,8 +126,14 @@
     <EmbeddedResource Include="Views\DrawForm.resx">
       <DependentUpon>DrawForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\QuestionnaireForm.resx">
+      <DependentUpon>QuestionnaireForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\WelcomeForm.resx">
       <DependentUpon>WelcomeForm.cs</DependentUpon>
@@ -142,7 +154,16 @@
   <ItemGroup>
     <None Include="Resources\welcome_back_01.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Fork\Azylee.Utils\Azylee.Core\Azylee.Core.csproj">
+      <Project>{88dc61fa-95f0-41b7-9d7d-ab0f3cbd169c}</Project>
+      <Name>Azylee.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Fork\Azylee.Utils\Azylee.WinformSkin\Azylee.WinformSkin.csproj">
+      <Project>{d280c16f-fde2-4647-bd76-3514f673426d}</Project>
+      <Name>Azylee.WinformSkin</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
