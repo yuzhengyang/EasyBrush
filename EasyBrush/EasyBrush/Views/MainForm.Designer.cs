@@ -151,6 +151,7 @@
             this.检查更新ToolStripMenuItem.Name = "检查更新ToolStripMenuItem";
             this.检查更新ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.检查更新ToolStripMenuItem.Text = "检查更新";
+            this.检查更新ToolStripMenuItem.Click += new System.EventHandler(this.检查更新ToolStripMenuItem_Click);
             // 
             // groupBox1
             // 

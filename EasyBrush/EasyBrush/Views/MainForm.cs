@@ -2,6 +2,7 @@
 using Azylee.Core.DrawingUtils.ImageUtils;
 using Azylee.Core.IOUtils.DirUtils;
 using Azylee.Core.ThreadUtils.SleepUtils;
+using Azylee.Core.WindowsUtils.BrowserUtils;
 using Azylee.WinformSkin.FormUI.Toast;
 using EasyBrush.Commons;
 using System;
@@ -78,6 +79,21 @@ namespace EasyBrush.Views
         private void 查看帮助ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             R.FormMan.GetUnique<HelpForm>().Show();
+        }
+        private void 检查更新ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string url = "https://github.com/yuzhengyang/EasyBrush";
+            bool _flag = false;
+            if (BrowserSelector.ModernBrowser(out string browser))
+            {
+                try
+                {
+                    Process.Start(browser, $"{url}");
+                    _flag = true;
+                }
+                catch { }
+            }
+            if (_flag == false) try { Process.Start($"{url}"); } catch { }
         }
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
         {

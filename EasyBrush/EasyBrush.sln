@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyBrush", "EasyBrush\Easy
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{4942F7AD-57B2-4DB5-AD40-2B53F155E7D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azylee.Core", "..\..\Fork\Azylee.Utils\Azylee.Core\Azylee.Core.csproj", "{88DC61FA-95F0-41B7-9D7D-AB0F3CBD169C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azylee.WinformSkin", "..\..\Fork\Azylee.Utils\Azylee.WinformSkin\Azylee.WinformSkin.csproj", "{D280C16F-FDE2-4647-BD76-3514F673426D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,14 +21,6 @@ Global
 		{4942F7AD-57B2-4DB5-AD40-2B53F155E7D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4942F7AD-57B2-4DB5-AD40-2B53F155E7D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4942F7AD-57B2-4DB5-AD40-2B53F155E7D3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{88DC61FA-95F0-41B7-9D7D-AB0F3CBD169C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88DC61FA-95F0-41B7-9D7D-AB0F3CBD169C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88DC61FA-95F0-41B7-9D7D-AB0F3CBD169C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88DC61FA-95F0-41B7-9D7D-AB0F3CBD169C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D280C16F-FDE2-4647-BD76-3514F673426D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D280C16F-FDE2-4647-BD76-3514F673426D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D280C16F-FDE2-4647-BD76-3514F673426D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D280C16F-FDE2-4647-BD76-3514F673426D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
